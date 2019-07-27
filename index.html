@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Edit_able_table</title>
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.11.2/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+	<button id="add_market_launch">Add Market Launch</button>
+    <div id="dialog_form1" title="Market Launch">
+    	<p class="validateTips">"Title" and "Estimated Sales Amount" form fields are required.</p>
+        <form action="#" id="myDialog_form">
+        	<fieldset>
+        	<input type="hidden" name='market-launch-id' id='market-launch-id'>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="brand">Brand</label>
+            <input type="text" name="brand" id="brand">
+            <label for="estimated_sales_amount">Estimated Sales Amount (USD)</label>
+            <input type="text" name="estimated_sales_amount" id="estimated_sales_amount">
+            <label for="launch_timeframe" id="">Launch Timeframe</label>
+            <select class="launch_timeframe" name="launch_timeframe" id="launch_timeframe1">
+            	<option></option>
+            	<option>Q1</option>
+            	<option>Q2</option>
+            	<option>Q3</option>
+            	<option>Q4</option>
+            </select>
+            <select class="launch_timeframe" name="launch_timeframe2" id="launch_timeframe2">
+            	<option></option>
+            	<option>2008</option>
+            	<option>2009</option>
+            	<option>2010</option>
+            	<option>2011</option>
+            </select>
+            <label for="win_confidential">Win Confidential</label>
+            <select name="win_confidential" id="win_confidential">
+            	<option></option>
+            	<option>Low</option>
+            	<option>Medium</option>
+            	<option>High</option>
+            </select>
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      		<!--<input type="submit" tabindex="-1" style="position:absolute; top:-100px">-->
+          </fieldset>
+        </form>
+    </div>
+    <div id="dialog_form2" title="Confirmation">
+    	<p class="validateTips">Are you sure you want to delete this Market Launch from the table?</p>
+    	<form action="#" id="myDialog_form2">
+    		<fieldset></fieldset>
+    	</form>
+    </div>
+
+	<div id="table_of_contents"></div>
+		<table id="market" style="width:100%">
+			<thead>
+				<tr class="titlerow">
+					<th>ID</th>
+					<th>Title</th>
+					<th>Brand</th>
+					<th>Launch TimeFrame</th>
+					<th>Est. Sales Potential(USD)</th>
+					<th>Est. Sales Potential(CHF)</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody id="market_tbody">
+			</tbody>
+		</table>
+
+		<script type="x-tmpl-mustache" id="table_row">
+			{{ #rows }}
+				<tr id = "{{ id }}">
+					<td>{{ id }}</td>
+					<td>{{ title }}</td>
+					<td>{{ brand }}</td>
+					<td>{{ launch_timeframe}}</td>
+					<td>{{ estimated_sales_amount }}</td>
+					<td>{{ CHF }}</td>
+					<td>{{ win_confidential }}</td>
+					<td data-row_id = "{{ id }}">
+						<button class = "row-button" data-role = "edit" >edit</button>
+						<button class = "row-button" data-role = "delete" >delete</button>
+					</td>
+				</tr>
+			{{ /rows }}
+		</script>
+	</div>
+	<div id = "totals"></div>
+	<script type="x-tmpl-mustache" id="total_amount">
+		{{ #total }}
+			<p class="totalAmountOfMarketLaunches"> #Of Market Launches: {{ OfMarketLaunches }} </p>
+			<p class="totalAmountOfMarketLaunches"> Regional Total Amount Of Estimated Sales Regional: {{ regionalTotalAmount }} </p>
+			<p class="totalAmountOfMarketLaunches"> Global Total Amount Of Estimated Sales Potentional: {{ globalTotalAmount }} </p>
+		{{ /total }}
+	</script>
+	<script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="libs/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="libs/mustache.js"></script>
+	<script type="text/javascript" src="libs/jquery-validation-1.13.1/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+git help
+git init
+git add —-all
+git commit -a -m "first commit"
+git remote add origin git@github.com:username/repository.git
+git push -u origin master
+
+git clone https://github.com/YOUR-USERNAME/Spoon-Knife
+git remote add upstream https://github.com/octocat/Spoon-Knife.git
+
+To find many git repository directories on your local system:
+find ~ -type d -name .git

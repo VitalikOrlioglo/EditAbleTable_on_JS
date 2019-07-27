@@ -1,0 +1,49 @@
+ label, input { 
+ 	display: block; 
+ }
+
+#market { 
+	border:solid 1px; 
+	width:100% ;
+	} 
+
+#market th { 
+	border: solid 1px; 
+	background-color: #4876FF;
+	} 	
+
+#market td { 
+	border: solid 1px; 
+	background-color: #dddddd;
+	} 
+
+#market .cellEditing { 
+	padding: 0px; 
+	} 
+
+#market .cellEditing input[type=text]{ 
+	width:100%; 
+	border:0; 
+	background-color:rgb(255,253,210); 
+	}
+
+#dialog_form1 {	
+	display: none;
+}
+
+#dialog_form2 {	
+	display: none;
+}
+
+#table_of_contents { 
+	width: 350px; 
+	margin: 10px; 
+}
+
+select {
+	width: 200px;
+}
+
+.overflow {
+	height: 200px;
+}
